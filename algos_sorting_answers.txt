@@ -1,0 +1,59 @@
+1. Implement a solution for bubble sort.
+var arr = [5, 2, 10, 8];
+
+function bubbleSort(arr) {
+  for (i = 0, j = 1; i < arr.length; i++, j++ ) {
+    if (arr[i] > arr[j]) {
+      temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
+      
+    }
+    
+  }
+return arr
+}
+console.log(bubbleSort(arr));
+
+2. Write pseudocode for quicksort.
+function partitionFunc(left, right, pivot)
+    leftPointer = left 
+    rightPointer = rigth -1 
+
+While 
+
+    while
+    i[++leftPointer] < pivot 
+    do nothing
+    end While
+
+while rightPointer > 0 && i[--rightPointer] > pivot
+    do nothing
+    end while 
+
+if leftPointer >= rightPointer 
+    break
+Else
+    swap leftPointer and rightPointer 
+    end if 
+end while
+
+swap leftPointer and right
+return leftPointer
+
+
+function quickSort(left, right)
+
+if right-left <= 0
+    return
+Else
+    pivot = i[right] 
+    partition = partitionFunc(lef, right, pivot)
+    quickSort(left, partition - 1) 
+    quickSort(partition + 1, right) 
+
+end if
+
+
+3. We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+Merge and quick sort have a better time complexity because of splitting the data and having two loops, especially with huge data sets. For example, selection sort is always 0(N2) even if the array is sorted and bubble sort has a worst case of 0(N2) and a best case of 0(N).
+4. All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+Bucket sort works by distributing the elements of an array into a number of buckets then each bucked is sorted individually by either using a different sorting algorithm or by recursively applying the bucket sorting algorithm. Bucket sort is a non-comparison based sorting algorithm that assumes it’s possible to create an array of buckets to be sorted by index, so you would ideally want something like an array where you can obtain an index for each item.
